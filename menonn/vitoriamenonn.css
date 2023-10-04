@@ -1,0 +1,37 @@
+
+body{
+    background-color: rgb(0, 0, 0);
+}
+#bt1{
+    color: rgb(0, 0, 0);
+    background-color: red;
+    padding: 15px;
+    border-radius: 15px;
+    width: 50%;
+    cursor: pointer;
+}
+#bt2{
+    color: rgb(0, 0, 0);
+    background-color: rgb(149, 0, 255);
+    padding: 15px;
+    border-radius: 15px;
+    width: 50%;
+    cursor: pointer;
+}
+#bt3{
+    color: rgb(0, 0, 0);
+    background-color: rgb(4, 0, 254);
+    padding: 15px;
+    border-radius: 15px;
+    width: 50%;
+    cursor: pointer;
+}
+#bt1:hover{
+    background-color: rgb(238, 137, 137);
+}
+#bt2:hover{
+    background-color: rgb(200, 136, 227);
+}
+#bt3:hover{
+    background-color: rgb(133, 148, 217);
+}
