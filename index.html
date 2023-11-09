@@ -1,25 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Document aula 24/08</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="style.css">
+  <title>Menon</title>
+
 </head>
+
 <body>
-    <script>
-        //alert("olá mundo");
-        //confirm("eu vou para o terceiro ano??");
-        //prompt("qual seu nome?")
-        //var nome = "Vitória Júlia"
-        //alert("meu nome eh " + nome)
-        var n1 = Number (prompt("informe o primeiro número a ser somado"))
-        var n2 = Number (prompt("informe o segundo número a ser somado"))
-        //var res= n1+n2
-        alert(`a  soma de ${n1} + ${n2} = ${n1+n2}`)
-        alert("a soma"+n1+ "+" +n2+ "=" + (n1+n2))
-        //alert("a soma"+n1+ "+" +n2+ "=" + res)
+
+  <div class="conteudo">
+    <h1>DIGITE SUA IDADE</h1>
+    <br>
+
+    <row>
+      <span>IDADE:</span>
+      <input id="idade" type="number" placeholder="Inserir sua idade"></input>
+    </row>
+
+    <row>
+      <input type="radio" id="masculino" name="genero">
+      <label for="masculino">MASCULINO</label>
+      <input type="radio" id="feminino" name="genero">
+      <label for="feminino">FEMININO</label>
+    </row>
+
+    <button onclick="enviar()">FEITO</button>
+    <span id="resposta"></span>
+    <img id="resposta-imagem"></img>
+  </div>
+
+  <script>
+      function enviar() {
+        const feminino = document.getElementById("feminino").checked;
+        const masculino = document.getElementById("masculino").checked;
+        const idade = Number(document.getElementById("idade").value);
+        var resposta = document.getElementById("resposta");
+        var respostaImagem = document.getElementById("resposta-imagem");
+        
+        if ( idade == "" || idade < 0) {
+          resposta.innerHTML = "Preencha o campo idade corretamente";
+
+        } else if(!masculino && !feminino) {
+          resposta.innerHTML = "Selecione um gênero";
+
+        } else if (masculino) {
+          resposta.innerHTML = `Você é um menino com ${idade} anos.`;
+
+          if (idade < 5) {
+            respostaImagem.src = "./mickeybb.jpg";
+
+          } else if (idade < 18) {
+            respostaImagem.src = "./mickeycriança.png";
+
+          } else if (idade < 65) {
+            respostaImagem.src = "./adultom.png";
+
+          } else {
+            respostaImagem.src = "./idosom.jpg";
+          }
 
 
+        } else if (feminino) {
+          resposta.innerHTML = `Você é uma menina com ${idade} anos.`;
 
-    </script>
+          if (idade < 5) {
+            respostaImagem.src = "./minniebb.jpg";
+
+          } else if (idade < 17) {
+            respostaImagem.src = "./minniecriança.png";
+
+          } else if (idade < 65) {
+            respostaImagem.src = "./adulta.jpg"; 
+
+          } else if  ( idade > 65) {
+            respostaImagem.src = "./idosaf.jpg";
+          }
+        }
+      }
+  </script>
+
+
 </body>
+
 </html>
